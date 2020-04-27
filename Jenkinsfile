@@ -22,7 +22,9 @@ pipeline {
                 
             }
         }
-        stage('Maven Test') { 
+	    
+	    
+     stage('Maven Test') { 
             steps {
 	       withMaven(maven : 'mymaven') {
 	           sh 'mvn test'
@@ -36,8 +38,8 @@ pipeline {
             }
         }
     }
-	    
-	    stage('docker build ') { 
+    
+    stage('docker build ') { 
             steps {
 	             sh 'docker build -t sample .'
             }
